@@ -55,12 +55,12 @@ class App extends Component {
         }
       
         <Switch>
-			<Route exact path='/' render={() => <Redirect to='/signup' />} />
-			<Route path='/login' render={() => <Login getUser={this.getUser} />} />
-			<Route path='/signup' render={() => !this.state.isLogged ? <Signup /> : <Redirect to='/tasks' />} />
-			<Route path='/tasks' render={() => this.state.isLogged ? <Tasks user={this.state.username} /> : <Redirect to='/login' />} />
-			<Route path='/logout' render={() => <Redirect to='/login' />} />
-			<Route component={Nomatch} />
+          <Route exact path='/' render={() => <Redirect to='/signup' />} />
+          <Route path='/login' render={() => <Login getUser={this.getUser} />} />
+          <Route path='/signup' render={() => !this.state.isLogged ? <Signup /> : <Redirect to='/tasks' />} />
+          <Route path='/tasks' render={() => this.state.isLogged ? <Tasks user={this.state.username} /> : <Redirect to='/login' />} />
+          <Route path='/logout' render={() => <Redirect to='/login' />} />
+          <Route component={Nomatch} />
         </Switch>
 
       </Fragment>
